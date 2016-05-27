@@ -20,11 +20,15 @@ def get_extension_ignore_url_params(url):
 
 class ThoroughSpider(scrapy.Spider):
     name = "spider"
-    allowed_domains = ["quackquaponics.com"]
-    start_urls = [
-        "http://www.quackquaponics.com"
-    ]
 
+    def __init__(self, domain=None, subdomain_exclusions=[]):
+        self.allowed_domains = [domain]
+        start_url = "http://" + domain
+
+        self.start_urls = [
+            start_url
+        ]
+        self.subdomain_exclusions=subdomain_exclusions
 
     def parse(self, response):
         # print("Parsing ", response.url)
