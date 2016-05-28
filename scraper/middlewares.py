@@ -13,7 +13,7 @@ class SubdomainBlockerMiddleware:
 
     def process_request(self, request, spider):
         # grab subdomain if it exists and check if it's on the exclusion list
-        subdomain = re.match('(?:http[s]*://)*(www)\.', request.url).group(1)
+        subdomain = re.match('(?:http[s]*://)*([-\w\d]+)\.', request.url).group(1)
         if subdomain in spider.subdomain_exclusions:
             logging.warning("Dropped request for excluded subdomain {}".format(subdomain))
             raise IgnoreRequest()
