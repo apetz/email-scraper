@@ -6,6 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 # based on the Scrapy Tutorial on item pipelines
+from scrapy.exceptions import DropItem
 
 
 class DeDupePipeline(object):
