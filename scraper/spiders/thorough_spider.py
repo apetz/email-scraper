@@ -1,4 +1,4 @@
-# implementation of the jana spider
+# implementation of the thorough spider
 
 import re
 from urllib.parse import urljoin, urlparse

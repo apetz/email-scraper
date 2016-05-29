@@ -1,7 +1,7 @@
 # very basic subdomain blocking middleware to intercept requests and drop them if the url is for
-# a subdomain that is on the blocked list. This is inspired by the blog.jana.com subdomain which
-# if crawled, results in an explosion of urls that are hit due to the many pages and embedded links
-# within the blog
+# a subdomain that is on the blocked list. This is inspired by various blog.*.com subdomains which
+# if crawled, result in an explosion of urls that are hit due to the many pages and embedded links
+# within the blogs
 
 import logging
 import re
