@@ -7,7 +7,7 @@ from scrapy.linkextractors import IGNORED_EXTENSIONS
 from scraper.items import EmailAddressItem
 
 # scrapy.linkextractors has a good list of binary extensions, only slight tweaks needed
-IGNORED_EXTENSIONS.append('ico')
+IGNORED_EXTENSIONS.extend(['ico', 'tgz', 'gz', 'bz2'])
 
 
 def get_extension_ignore_url_params(url):
